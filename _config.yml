@@ -1,20 +1,20 @@
-title:            Site Title
-description:      Describe your website.
+title:            Derek Morgan
+description:      "The personal website of Derek Morgan."
 # Your site's domain goes here. Leave localhost server or blank when working locally.
-url:              http://localhost:4000
+url:              http://dmorgan.info
 
 # Owner/author information
 owner:
-  name:           Your Name
+  name:           Derek Morgan
   avatar:         bio-photo.jpg
-  bio:            "Describe your self."
-  email:          your@email.com
+  bio:            "A programmer living in Baltimore, Maryland."
+  email:          derek@dmorgan.info
   # Social networking links are used in author-bio sidebar. Update and remove as you like.
   twitter:        
   facebook:       
-  github:         
+  github:         "d-m"
   stackoverflow: 
-  linkedin:       
+  linkedin:       "mderek"
   instagram:      
   lastfm:         
   tumblr: 
@@ -23,10 +23,10 @@ owner:
   steam: 
   dribbble: 
   # For Google Authorship https://plus.google.com/authorship
-  google_plus:
+  google_plus: "106623951548616966555"
 
 # Analytics and webmaster tools stuff goes here
-google_analytics:   
+google_analytics:  "UA-48992836-1" 
 google_verify:      
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
 bing_verify:        
