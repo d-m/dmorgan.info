@@ -1,7 +1,7 @@
 ---
 layout: home
-description: "A responsive Jekyll theme with editorial tendencies by designer Michael Rose."
-tags: [Jekyll, theme, responsive, blog, template]
+description: "Internet home of Derek Morgan, a programmer in Baltimore, MD." 
+tags: [Baltimore, Maryland, programming, javascript, python, jquery, open source]
 image:
   feature: baltimore1.jpg
   credit: Gavin St. Ours (cropped)
