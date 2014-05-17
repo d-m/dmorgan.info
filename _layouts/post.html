@@ -13,10 +13,22 @@
 
 {% include _navigation.html %}
 
-{% if page.image.feature %}<div class="image-wrap">
-  <img src="{{ site.url }}/images/{{ page.image.feature }}" alt="{{ page.title }} feature image">
-  {% if page.image.credit %}<span class="image-credit">Photo Credit: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></span>{% endif %}
-</div><!-- /.image-wrap -->{% endif %}
+{% if page.image.feature %}
+  <div class="image-wrap">
+  <img src=
+    {% if page.image.feature contains 'http://' %}
+      "{{ page.image.feature }}"
+    {% elsif page.image.feature contains 'https://' %}
+      "{{ page.image.feature }}"
+    {% else %}
+      "{{ site.url }}/images/{{ page.image.feature }}"
+    {% endif %}
+  alt="{{ page.title }} feature image">
+  {% if page.image.credit %}
+    <span class="image-credit">Photo Credit: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></span>
+  {% endif %}
+  </div><!-- /.image-wrap -->
+{% endif %}
 
 <div id="main" role="main">
   <div class="article-author-side">
@@ -24,7 +36,11 @@
   </div>
   <article>
     <div class="headline-wrap">
-      <h1>{{ page.title }}</h1>
+      {% if page.link %}
+        <h1><a href="{{ page.link }}">{{ page.title }}</a></h1>
+      {% else %}
+        <h1><a href="{{ site.url }}{{ page.url }}" rel="bookmark" title="{{ page.title }}">{{ page.title }}</a></h1>
+      {% endif %}
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
       {{ content }}
@@ -36,6 +52,9 @@
         <p class="byline"><strong>{{ page.title }}</strong> was published on <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>{% if page.modified %} and last modified on <time datetime="{{ page.modified | date: "%Y-%m-%d" }}">{{ page.modified | date: "%B %d, %Y" }}</time>{% endif %} by <a href="{{ site.url }}/about" title="About {{ site.owner.name }}">{{ site.owner.name }}</a>.</p>
       </footer>
     </div><!-- /.article-wrap -->
+  {% if site.disqus_shortname and page.comments %}
+    <section id="disqus_thread"></section><!-- /#disqus_thread -->
+  {% endif %}
   </article>
 </div><!-- /#main -->
 
