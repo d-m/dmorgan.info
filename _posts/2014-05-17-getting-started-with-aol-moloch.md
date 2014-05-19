@@ -3,7 +3,7 @@ layout: post
 title: "Getting Started with AOL Moloch"
 description: "Get started with Moloch, an open source PCAP capturing system
 maintained by AOL."
-modified: 2014-05-17 17:37:53 -0400
+modified: 2014-05-18 20:03:00 -0400
 category: posts 
 tags: [aol, moloch, pcap, open source]
 image:
@@ -22,7 +22,7 @@ indexing, and database system maintained by AOL with source hosted on GitHub.
 With Moloch you can capture full PCAPs of traffic sessions on your network,
 search through and filter the resultant session metadata, and export PCAPs based
 on session, time period, or both. In addition, Moloch enriches session metadata
-by utilizing [MaxMind GeoIP](http://www.maxmind.com/app/c) to gelocate IP
+by utilizing [MaxMind GeoIP](http://www.maxmind.com/app/c) to geolocate IP
 addresses.
 
 ## Components
@@ -36,8 +36,8 @@ user interface and PCAP transfer functionality.
  -  [Elasticsearch](http://elasticsearch.org)
 
 These components can be deployed on a single machine or across multiple hosts.
-The GitHub repo contains an `easybutton-config.sh` script for quickly getting
-started.
+The GitHub repository contains an `easybutton-config.sh` script for quickly
+getting started.
 
 ## Single Host Install
 
@@ -51,7 +51,7 @@ To get Moloch up and running, perform the following steps on a Linux system:
  4. Start the capture process: `sudo nohup /data/moloch/bin/run_capture.sh &`
  5. Start the viewer process: `sudo nohup /data/moloch/bin/run_viewer.sh &`
 
-The web interface will be avaialable on port 8005 after starting the viewer
+The web interface will be available on port 8005 after starting the viewer
 process.  If the capture process on your Moloch host is listening on the same
 interface that the viewer is bound to then you should begin to see traffic
 sessions appear in the "Sessions" tab.
