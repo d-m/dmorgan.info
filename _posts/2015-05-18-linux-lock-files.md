@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Linux Lock Files"
-modified: 2015-05-18 14:08:18 -0400
+modified: 2015-05-19 10:22:18 -0400
 category: posts
-tags: [linux, lock, lock file, flock]
+tags: [linux, lock, lock file, flock, scripting, shell, bash]
 image:
   feature: 
   credit: 
@@ -84,7 +84,7 @@ The `flock` command can be used in a shell script as follows:
 ) 200>/var/lock/lockfile
 {% endhighlight %}
 
-These two scripts are nearly identical: the first one attempts to acquire an exclusive lock while the second one attempts to acquire a shared lock. When used this way, `flock` takes a [file descriptor](https://en.wikipedia.org/wiki/File_descriptor): 200 in this example. This script attempts to obtain an exclusive lock on file descriptor 200. The script attempts to obtain the lock in a non-blocking way, meaning that the script will exit immediately with an exit code of 1 if the lock is not available. It then opens `/var/lock/lockfile` and assigns the file descriptor 200 to it. The `trap` statement isn't needed for acuiring the lock, but ensures that the lock file is removed upon successful completion of the code block.
+These two scripts are nearly identical: the first one attempts to acquire an exclusive lock while the second one attempts to acquire a shared lock. When used this way, `flock` takes a [file descriptor](https://en.wikipedia.org/wiki/File_descriptor): 200 in this example. The script attempts to obtain the lock in a non-blocking way, meaning that the script will exit immediately with an exit code of 1 if the lock is not available. It then opens `/var/lock/lockfile` and assigns the file descriptor 200 to it. The `trap` statement isn't needed for acquiring the lock, but ensures that the lock file is removed upon successful completion of the code block.
 
 These scripts also show the advisory nature of file locking on Linux systems. The script itself is responsible for checking the return value of the `flock` statement and handle it appropriately.
 
