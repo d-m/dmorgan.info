@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "What the =?UTF-8?B?ZnVjayDwn5CO?=!"
-description: "A quick overview of encoded-word syntax, the scheme for sending non-ASCII characters over email."
-modified: 2015-07-25 23:05:56 -0400
+excerpt: "A quick overview of encoded-word syntax, the scheme for sending non-ASCII characters over email."
+modified: 2015-07-26 12:15:00 -0400
 category: posts
 tags: [encoded word syntax, email, mime, python, base64, rfc 20822, rfc 2047, rfc 2045, character set, encoding, ascii, iana, charset]
 image:

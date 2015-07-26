@@ -1,22 +1,22 @@
 ---
 layout: post
 title: "Use Django's Class-Based Views with Bootstrap Modals"
-description: Render a Django view in a Boostrap modal using a little Python and JavaScript.
+excerpt: Render a Django view in a Boostrap modal using a little Python and JavaScript.
 modified: 2014-05-23 15:45:45 -0400
 category: posts
 tags: [django, python, views, forms, class based, bootstrap, modals, jquery, ajax, javascript]
 image:
-  feature: 
-  credit: 
-  creditlink: 
-comments: 
-share: 
+  feature:
+  credit:
+  creditlink:
+comments:
+share:
 ---
 
 [Twitter Bootstrap](http://getbootstrap.com) contains an exhaustive set of CSS
-classes, components, and jQuery plugins that are responsive across a broad array 
-of devices. When combined with the [Django web 
-framework](http://djangoproject.com), creating responsive, data-driven websites 
+classes, components, and jQuery plugins that are responsive across a broad array
+of devices. When combined with the [Django web
+framework](http://djangoproject.com), creating responsive, data-driven websites
 becomes quick and easy for Python developers.
 
 The modal dialog box is one of the components Bootstrap provides. Since Django's
@@ -32,25 +32,25 @@ boxes has become a common task.
 [Many](http://stackoverflow.com/questions/11276100/how-do-i-insert-a-django-form-in-twitter-bootstrap-modal-window)
 [different](http://stackoverflow.com/questions/13394057/django-ajax-modal-login-registration)
 [methods](https://groups.google.com/forum/#!topic/twitter-bootstrap-stackoverflow/6Cpxw1Ji_E8)
-exist for accomplishing this task, but these solutions often require duplicating 
-template code, don't address rendering the same view as both a standalone page 
-and the contents of a modal, or don't account for redirects when submitting 
+exist for accomplishing this task, but these solutions often require duplicating
+template code, don't address rendering the same view as both a standalone page
+and the contents of a modal, or don't account for redirects when submitting
 forms.
 
-I recently found myself trying to render a Django view as both a modal and a 
+I recently found myself trying to render a Django view as both a modal and a
 standalone page and had the following requirements:
 
  - minimize code repetition
  - update the modal with any form errors
  - close the modal on successful submission
 
-I was able to accomplish this task with a few lines of Python, a few lines of 
+I was able to accomplish this task with a few lines of Python, a few lines of
 JavaScript, and a minor template change.
 
 ## Server-Side Changes
 
 The server-side changes consisted of creating an `AjaxTemplateMixin` to render a
-different template for AJAX requests and making a small change to an existing 
+different template for AJAX requests and making a small change to an existing
 template.
 
 ### An AjaxTemplateMixin
@@ -69,9 +69,9 @@ class AjaxTemplateMixin(object):
         return super(AjaxTemplateMixin, self).dispatch(request, *args, **kwargs)
 {% endhighlight %}
 
-The first step required writing a mixin to add an `ajax_template_name` attribute 
+The first step required writing a mixin to add an `ajax_template_name` attribute
 Django's class-based views. If this attribute is not explicitly defined, it will
-default to adding `_inner` to the end of the `template_name` attribute.  For 
+default to adding `_inner` to the end of the `template_name` attribute.  For
 example, take the following FormView class:
 
 {% highlight python linenos %}
@@ -82,16 +82,16 @@ class TestFormView(SuccessMessageMixin, AjaxTemplateMixin, FormView):
     success_message = "Way to go!"
 {% endhighlight %}
 
-In this example, the `ajax_template_name` defaults to 
-`test_app/test_form_inner.html`.  If the request is AJAX, then the view renders 
+In this example, the `ajax_template_name` defaults to
+`test_app/test_form_inner.html`.  If the request is AJAX, then the view renders
 this template. Otherwise, the view renders the `test_app/test_form.html`
 template.
 
 ### Create the AJAX Template
 
-Now that the view will render `ajax_template_name` for AJAX requests we have to 
-create it. This template could be unique, but more than likely it will be the 
-same as `template_name` but without extending the base template containing the 
+Now that the view will render `ajax_template_name` for AJAX requests we have to
+create it. This template could be unique, but more than likely it will be the
+same as `template_name` but without extending the base template containing the
 site's header, navigation, and footer. This could be as simple as changing
 `test_app/test_form.html` from:
 
@@ -138,9 +138,9 @@ and creating `test_app/test_form_inner.html` containing:
 {% endhighlight %}
 
 All we've done here is moved the HTML within the content block to its own
-template. The example template uses 
-[django-crispy-forms](http://django-crispy-forms.readthedocs.org/en/latest/) to 
-generate the form markup using Bootstrap CSS classes but this is not a 
+template. The example template uses
+[django-crispy-forms](http://django-crispy-forms.readthedocs.org/en/latest/) to
+generate the form markup using Bootstrap CSS classes but this is not a
 requirement.
 
 ## Front-end Changes
@@ -184,7 +184,7 @@ replace the HTML within `#form-modal`. However, there are a couple problems with
 this:
 
  - Using data attributes replaces the entire contents of the modal, so your
-template will need to contain the `.modal-dialog`, `.modal-content` and 
+template will need to contain the `.modal-dialog`, `.modal-content` and
 `.modal-body` DIVs to render properly.
  - jQuery's `.load()` is only called once the first time the modal is opened.
  - Any redirects that occur, such as from submitting a form, will redirect the

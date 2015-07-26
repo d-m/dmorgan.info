@@ -1,17 +1,17 @@
 ---
 layout: post
 title: "Getting Started with AOL Moloch"
-description: "Get started with Moloch, an open source PCAP capturing system
+excerpt: "Get started with Moloch, an open source PCAP capturing system
 maintained by AOL."
 modified: 2014-05-18 20:03:00 -0400
-category: posts 
+category: posts
 tags: [aol, moloch, pcap, open source]
 image:
-  feature: 
-  credit: 
-  creditlink: 
-comments: 
-share: 
+  feature:
+  credit:
+  creditlink:
+comments:
+share:
 ---
 
 [Moloch](https://github.com/aol/moloch) is an open source PCAP capturing,
