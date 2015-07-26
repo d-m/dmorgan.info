@@ -1,7 +1,7 @@
 ---
 layout: home
-description: "Internet home of Derek Morgan, a programmer in Baltimore, MD." 
-tags: [Baltimore, Maryland, programming, javascript, python, jquery, open source]
+excerpt: "Internet home of Derek Morgan, a programmer in Baltimore, MD."
+tags: [Baltimore, Maryland, Python, JavaScript, Linux, open source, jQuery, programming]
 image:
   feature: baltimore1.jpg
   credit: Gavin St. Ours (cropped)
