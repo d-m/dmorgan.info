@@ -1,11 +1,13 @@
 ---
 layout: post
 title: "What the =?UTF-8?B?ZnVjayDwn5CO?=!"
-modified: 2015-07-25 10:05:56 -0400
+description: "A quick overview of encoded-word syntax, the scheme for sending non-ASCII characters over email."
+modified: 2015-07-25 23:05:56 -0400
 category: posts
 tags: [encoded word syntax, email, mime, python, base64, rfc 20822, rfc 2047, rfc 2045, character set, encoding, ascii, iana, charset]
 image:
-  feature:
+  feature: morse_code_post_header.png
+  thumb: morse_code_post_thumb.png
   credit:
   creditlink:
 comments:
@@ -66,7 +68,7 @@ Out[2]: '=?UTF-8?Q?This is a horsey: =F0=9F=90=8E?='
 
 Note: This output is from Python 3. You will need to change `"\U0001F40E"` to `u"\U0001F40E"` to see the same results using Python 2.
 
-Now our horse is ready to email! This output shows a benefit of using the 'Q' encoding for strings that are primarily composed of ASCII characters. One can read most of the message in the second output without first decoding the encoded words.
+Now our horse is ready to email! This output shows a benefit of using the 'Q' encoding for strings that are primarily composed of ASCII characters: one can read most of the message in the second output without first decoding the encoded words.
 
 ## Decoding Example ##
 
@@ -81,7 +83,7 @@ def encoded_words_to_text(encoded_words):
     return byte_string.decode(charset)
 {% endhighlight %}
 
-This code applies a regular expression to pull out the character set, encoding, and encoded text from the encoded words. Next, it decodes the encoded words into a byte string, using either the `quopri` module or `base64` module as determined by the encoding. Finally, it decodes the byte string using the character set and returns the result.
+This function applies a regular expression to pull out the character set, encoding, and encoded text from the encoded words. Next, it decodes the encoded words into a byte string, using either the `quopri` module or `base64` module as determined by the encoding. Finally, it decodes the byte string using the character set and returns the result.
 
 Running this function on our encoded words returns the Unicode code point for our  horsey:
 

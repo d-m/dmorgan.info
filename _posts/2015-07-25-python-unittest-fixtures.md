@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Python unittest Fixtures"
+modified: 2015-07-25 15:05:56 -0400
 category: posts
 tags: [python, unittest, fixtures, testing, unit testing, test case]
 image:
