@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Use Django's Class-Based Views with Bootstrap Modals"
-excerpt: Render a Django view in a Boostrap modal using a little Python and JavaScript.
+excerpt: "Render a Django view in a Bootstrap modal using a little Python and JavaScript."
 modified: 2014-05-23 15:45:45 -0400
 category: posts
 tags: [django, python, views, forms, class based, bootstrap, modals, jquery, ajax, javascript]
