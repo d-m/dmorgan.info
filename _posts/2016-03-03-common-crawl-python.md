@@ -46,14 +46,16 @@ common-crawl/crawl-data/CC-MAIN-2016-07/segments/1454701145519.33/warc/CC-MAIN-2
 ...
 {% endhighlight %}
 
-[wat.paths file](https://aws-publicdatasets.s3.amazonaws.com/common-crawl/crawl-data/CC-MAIN-2016-07/warc.{% highlight text %}
+[wat.paths file](https://aws-publicdatasets.s3.amazonaws.com/common-crawl/crawl-data/CC-MAIN-2016-07/warc.paths.gz)
+{% highlight text %}
 common-crawl/crawl-data/CC-MAIN-2016-07/segments/1454701145519.33/wat/CC-MAIN-20160205193905-00000-ip-10-236-182-209.ec2.internal.warc.wat.gz
 common-crawl/crawl-data/CC-MAIN-2016-07/segments/1454701145519.33/wat/CC-MAIN-20160205193905-00001-ip-10-236-182-209.ec2.internal.warc.wat.gz
 common-crawl/crawl-data/CC-MAIN-2016-07/segments/1454701145519.33/wat/CC-MAIN-20160205193905-00002-ip-10-236-182-209.ec2.internal.warc.wat.gz
 ...
 {% endhighlight %}
 
-[wet.paths file](https://aws-publicdatasets.s3.amazonaws.com/common-crawl/crawl-data/CC-MAIN-2016-07/wet.p{% highlight text %}
+[wet.paths file](https://aws-publicdatasets.s3.amazonaws.com/common-crawl/crawl-data/CC-MAIN-2016-07/wet.paths.gz)
+{% highlight text %}
 common-crawl/crawl-data/CC-MAIN-2016-07/segments/1454701145519.33/wet/CC-MAIN-20160205193905-00000-ip-10-236-182-209.ec2.internal.warc.wet.gz
 common-crawl/crawl-data/CC-MAIN-2016-07/segments/1454701145519.33/wet/CC-MAIN-20160205193905-00001-ip-10-236-182-209.ec2.internal.warc.wet.gz
 common-crawl/crawl-data/CC-MAIN-2016-07/segments/1454701145519.33/wet/CC-MAIN-20160205193905-00002-ip-10-236-182-209.ec2.internal.warc.wet.gz
